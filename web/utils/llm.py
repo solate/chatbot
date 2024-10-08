@@ -7,7 +7,6 @@ from langchain_community.chat_models import QianfanChatEndpoint
 from langchain_openai import ChatOpenAI
 
 
-
 def get_qianfan_llm(model="ERNIE-3.5-8K", temperature = 0.7):
     llm = QianfanChatEndpoint(
         api_key=st.secrets["QIANFAN_API_KEY"],
@@ -37,5 +36,13 @@ def get_self_openai_llm(openai_api_key, model="gpt-3.5-turbo", temperature = 0.7
     return llm
 
 
-  
+def get_qwen_llm(model="qwen-plus", temperature = 0.7):
+    from langchain_community.chat_models.tongyi import ChatTongyi
+    llm = ChatTongyi(
+        model=model,
+        api_key=st.secrets["DASHSCOPE_API_KEY"],
+        temperature=temperature,
+        stream=True,
+    )
+    return llm  
 

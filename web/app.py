@@ -4,7 +4,7 @@ import streamlit as st
 
 
 # 配置页面布局为宽模式，设置页面图标和标题
-st.set_page_config(layout="wide", page_icon="🤖", page_title="聊天机器人")
+st.set_page_config(layout="wide", page_title="聊天机器人")
 
 
 # Contact
